@@ -1,12 +1,18 @@
+import './components/Board/Board.css'
+import './components/Cell/Cell.css'
+import './components/Tries/Tries.css'
 import './App.css'
 import type {IItem} from "./types";
 import {useState} from "react";
+import Board from "./components/Board/Board.tsx";
+import Cell from "./components/Cell/Cell.tsx";
+import Tries from "./components/Tries/Tries.tsx";
+import Button from "./components/Button/Button.tsx";
 
  const createItems = (): IItem[] => {
-        const allCells: number = 36;
-        const itemsArray: IItem[] = [];
+     const itemsArray: IItem[] = [];
 
-        for (let i = 0; i < allCells; i++) {
+        for (let i = 0; i < 36; i++) {
             itemsArray.push({
                 id: i,
                 hasItem: false,
@@ -14,7 +20,7 @@ import {useState} from "react";
             });
         }
 
-        const randomIndex = Math.floor(Math.random() * allCells);
+        const randomIndex: number = Math.floor(Math.random() * 36);
 
         itemsArray[randomIndex].hasItem = true;
 
@@ -25,10 +31,32 @@ import {useState} from "react";
 const App = () => {
     const [items, setItems] = useState<IItem[]>(createItems());
 
+    const clickCell = () => {
+
+
+
+    }
+
 
   return (
     <>
+        <Board>
+            {items.map((item: IItem) => (
+                <Cell
+                    key={item.id}
+                    className='cell'
+                    onClick={clickCell}
+                />
+            ))}
+        </Board>
+        <Tries
+            className='tries'
+            text={`Tries: ${items.length}`}
+        />
 
+        <Button
+            text='Reset'
+        />
     </>
   )
 };

@@ -1,0 +1,9 @@
+.cell {
+  width: 60px;
+  height: 60px;
+  margin: 1px;
+  background-color: gray;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+}
