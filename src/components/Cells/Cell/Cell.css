@@ -1,4 +1,4 @@
-.cell {
+.block {
   width: 60px;
   height: 60px;
   margin: 1px;
@@ -7,3 +7,13 @@
   vertical-align: top;
   cursor: pointer;
 }
+
+.none {
+  background-color: white;
+}
+
+.won-item {
+  background: url(/src/assets/icon.png) no-repeat center/cover;
+}
+
+

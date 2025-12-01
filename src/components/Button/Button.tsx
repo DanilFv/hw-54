@@ -5,7 +5,7 @@ interface Props {
     text: string;
     className?: string;
     style?: React.CSSProperties;
-    onClick?: React.MouseEventHandler
+    onClick?: React.MouseEventHandler;
 }
 
 const Button: React.FC<Props> = ({ type='button', text='Текст', className, style, onClick }) => {
